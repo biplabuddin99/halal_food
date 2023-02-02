@@ -28,11 +28,9 @@
                     @forelse ($product as $p)
                     <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
                         <div class="card shadow mb-3">
-                          <img
-                            class="card-img-top"
-                            src="{{ asset('uploads/product') }}/{{ $p->item_image }}"
-                            alt=""
-                          />
+                          <a href="#">
+                          <img class="card-img-top" src="{{ asset('uploads/product') }}/{{ $p->item_image }}"/>
+                          </a>
                           <div class="card-body">
                             <p class="card-title text-center">{{ $p->item_name }}</p>
                             <p class="card-title text-center m-0 p-0">{{ $p->price .' '.'TK' }}</p>

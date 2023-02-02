@@ -23,6 +23,16 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function viewProduct($id)
+    {
+        $show_product = DB::table('db_items')->where('is_feature', '1')->select('item_name','price','item_image','is_feature')->with('singleProduct')->findOrFail($id);
+        return View('product.product.singleProduct', compact($show_product));
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         //
