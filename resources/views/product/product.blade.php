@@ -29,7 +29,8 @@
                     <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
                         <div class="card shadow mb-3">
                           <a href="#">
-                          <img class="card-img-top" src="{{ asset('uploads/product') }}/{{ $p->item_image }}"/>
+                            <a href="{{ route('product_details.singleProduct',$p->id) }}">
+                          <img class="card-img-top" src="{{ asset('./../../albaik/') }}/{{ $p->item_image }}"/>
                           </a>
                           <div class="card-body">
                             <p class="card-title text-center">{{ $p->item_name }}</p>
@@ -44,6 +45,7 @@
                     @empty
                         <p>no Product</p>
                     @endforelse
+                    {{ $product->links() }}
 
                 </div>
               </div>

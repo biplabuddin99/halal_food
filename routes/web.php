@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CustomerAuthController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\CategoryController;
@@ -25,7 +26,10 @@ Route::resource('/',FrontendController::class);
 Route::resource('category',CategoryController::class);
 Route::resource('subcategory',SubcategoryController::class);
 Route::resource('product',ProductController::class);
-Route::get('/product/{id}', [ProductController::class,'viewProduct'])->name('product.product.singleProduct');
+Route::resource('cart',CartController::class);
+Route::get('/product_details/{id}', [ProductController::class,'singleProduct'])->name('product_details.singleProduct');
+
+
 Route::get('/customer',[CustomerAuthController::class,'SingUpForm'])->name('register');
 Route::post('register',[CustomerAuthController::class,'signUpStore'])->name('customer.store');
 Route::get('/login',[CustomerAuthController::class,'SinInForm'])->name('login');

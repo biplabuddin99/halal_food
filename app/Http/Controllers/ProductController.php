@@ -14,7 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = DB::table('db_items')->where('is_feature', '1')->select('item_name','price','item_image','is_feature')->get();
+        $product = DB::table('db_items')->where('is_feature', '1')->select('id','item_name','price','item_image','is_feature')->paginate(12);
+        // return $product;
         return view('product.product',compact('product'));
     }
 
@@ -23,10 +24,14 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function viewProduct($id)
+    public function singleProduct($id)
     {
-        $show_product = DB::table('db_items')->where('is_feature', '1')->select('item_name','price','item_image','is_feature')->with('singleProduct')->findOrFail($id);
-        return View('product.product.singleProduct', compact($show_product));
+        $show_product = DB::table('db_items')->where('id',$id)->first();
+        $related_products = DB::table('db_items')->whereNot('id', $id)->select('id', 'item_name', 'price', 'item_image', 'is_feature')->limit(4)->get();
+        // print_r($show_product);
+        // die();
+        // return $related_products;
+        return view('product.singleProduct',compact('show_product','related_products'));
     }
     /**
      * Show the form for creating a new resource.

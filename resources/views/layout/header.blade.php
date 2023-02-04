@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{{ asset('assets/resource') }}/css/main.css" />
     <link rel="stylesheet" href="{{ asset('assets/resource') }}/css/category.css" />
     <link rel="stylesheet" href="{{ asset('assets/resource') }}/css/child-category.css" />
+    <link rel="stylesheet" href="{{ asset('assets/resource') }}/css/cart.css" />
+    <link rel="stylesheet" href="{{ asset('assets/resource') }}/css/single.css" />
     <!-- Bootstrp 5 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
