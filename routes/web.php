@@ -27,6 +27,7 @@ Route::get('/home',[FrontendController::class,'index'])->name('home');
 Route::resource('category',CategoryController::class);
 Route::get('side-category',[CategoryController::class,'sideCategory'])->name('side.category');
 Route::resource('subcategory',SubcategoryController::class);
+Route::get('/subcategory-list/{category_id}',[SubcategoryController::class,'subCategory'])->name('subcategory.list');
 Route::resource('product',ProductController::class);
 Route::get('/product_details/{id}', [ProductController::class,'singleProduct'])->name('product_details.singleProduct');
 Route::get('/shopping-cart',[CartController::class,'cartPage'])->name('cart.page');

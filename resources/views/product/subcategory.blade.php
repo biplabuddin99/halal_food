@@ -36,7 +36,7 @@
       <!-- Breadcrumb ends -->
       <!-- sub catagory -->
       <div class="row">
-        @forelse ($subcategory as $subcat)
+        @forelse ($show_subcategory as $subcat)
         <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3">
             <a href="{{ route('product.index') }}">
               <img src="{{ asset('./../../albaik/uploads/subcategory') }}/{{ $subcat->banner_image }}" alt="" />
@@ -44,12 +44,7 @@
             >
           </div>
         @empty
-        <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3">
-            <a href="#">
-              <img src="{{ asset('assets/resource') }}/img/fruits-vegetables.webp" alt="" />
-              <p>fresh-vegetable</p></a
-            >
-          </div>
+        <h3>No Sub-Category Found</h3>
         @endforelse
       </div>
     </div>

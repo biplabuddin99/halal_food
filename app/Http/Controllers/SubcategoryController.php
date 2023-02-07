@@ -18,6 +18,14 @@ class SubcategoryController extends Controller
          $subcategorys = DB::table('db_subcategory')->orderBy('id', 'desc')->where('is_advertise', '1')->select('is_advertise','advertise_image')->limit(6)->get();
         return view('product.subcategory',compact('subcategorys','subcategory'));
     }
+    public function subCategory($category_id)
+    {
+        $show_subcategory = DB::table('db_subcategory')->where('category_id',$category_id)->get();
+        $subcategorys = DB::table('db_subcategory')->orderBy('id', 'desc')->where('is_advertise', '1')->select('is_advertise','advertise_image')->limit(6)->get();
+        // return $show_subcategory;
+        return view('product.subcategory',compact('show_subcategory','subcategorys'));
+
+    }
 
     /**
      * Show the form for creating a new resource.
