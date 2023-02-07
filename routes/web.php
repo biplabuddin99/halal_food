@@ -23,11 +23,15 @@ use App\Http\Middleware\isCustomer;
 */
 
 Route::resource('/',FrontendController::class);
+Route::get('/home',[FrontendController::class,'index'])->name('home');
 Route::resource('category',CategoryController::class);
+Route::get('side-category',[CategoryController::class,'sideCategory'])->name('side.category');
 Route::resource('subcategory',SubcategoryController::class);
 Route::resource('product',ProductController::class);
-Route::resource('cart',CartController::class);
 Route::get('/product_details/{id}', [ProductController::class,'singleProduct'])->name('product_details.singleProduct');
+Route::get('/shopping-cart',[CartController::class,'cartPage'])->name('cart.page');
+Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add-to.cart');
+// Route::resource('cart',CartController::class);
 
 
 Route::get('/customer',[CustomerAuthController::class,'SingUpForm'])->name('register');

@@ -67,7 +67,7 @@
                   </ul>
                   <a href="#"><i class="bi bi-truck"></i></a>
                     <a href="#"><i class="bi bi-heart"></i></a>
-                    <a href="#"><i class="bi bi-basket"></i>
+                    <a href="{{ route('cart.page') }}"><i class="bi bi-basket"></i>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                             99+
                         </span>
@@ -122,12 +122,12 @@
                       </a>
                       <ul class="dropdown-menu">
                         <li>
-                          <a class="dropdown-item" href="category.blade.php"
+                          <a class="dropdown-item" href="{{ route('category.index') }}"
                             ><img
                               class="side-nav-icon"
                               src="{{ asset('assets/resource') }}/img/icon/chili-pepper.png"
                               alt=""
-                            />Sub 1
+                            />Category
                           </a>
                         </li>
                         <li>

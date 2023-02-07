@@ -38,7 +38,7 @@
       <div class="row">
         @forelse ($subcategory as $subcat)
         <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3">
-            <a href="#">
+            <a href="{{ route('product.index') }}">
               <img src="{{ asset('./../../albaik/uploads/subcategory') }}/{{ $subcat->banner_image }}" alt="" />
               <p>{{ $subcat->subcategory_name }}</p></a
             >

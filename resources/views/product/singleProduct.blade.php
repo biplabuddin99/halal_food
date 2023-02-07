@@ -46,12 +46,14 @@
             </div>
             <span>In Stock</span>
             <p class="p-short-specification">{{ $show_product->description }} </p>
-            <form class="quentity d-flex my-4" action="">
-                <div>
+            <form class="quentity d-flex my-4" action="{{ route('add-to.cart') }}" method="post">
+                @csrf
+                <input type="hidden" name="product_id" value="{{ $show_product->id }}">
+                <div id="sub">
                 <i class="bi bi-dash"></i>
                 </div>
-                <input type="text" placeholder="1" value="1" />
-                <div>
+                <input type="text" id="qtyBox" placeholder="1" value="1" name="order_qty" />
+                <div id="add">
                 <i class="bi bi-plus"></i>
                 </div>
                 <input type="submit" value="Add To Cart" />
@@ -59,6 +61,16 @@
                 <i class="bi bi-heart-fill"></i>
                 </div>
             </form>
+            {{-- <form action="{{ route('add-to.cart') }}" method="post">
+                @csrf
+                <input type="hidden" name="product_slug" value="{{ $product->slug }}">
+                <li class="quantity cart-plus-minus">
+                    <input type="text" value="1" name="order_qty" />
+                </li>
+                <li>
+                    <button type="submit" class="btn btn-danger">Add to Cart</button>
+                </li>
+            </form> --}}
             <div class="p-short-point">
                 <ul class="navbar-nav">
                 <li class="nav-item">
@@ -221,5 +233,21 @@
         <!-- Related Products  end-->
     </div>
 </div>
+<script type="text/javascript">
+    let addBtn= document.querySelector('#add');
+    let subBtn= document.querySelector('#sub');
+    let qty= document.querySelector('#qtyBox');
+    // console.log(addBtn,subBtn,qty);
+    addBtn.addEventListener('click',()=>{
+        qty.value=parseInt(qty.value)+1;
+    });
+    subBtn.addEventListener('click',()=>{
+        if(qty.value <= 0){
+            qty.value=0;
+        }else{
+            qty.value=parseInt(qty.value) -1;
+        }
+    });
+</script>
 
 @endsection

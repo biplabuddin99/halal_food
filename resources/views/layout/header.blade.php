@@ -45,7 +45,7 @@
             </p>
           </div>
           <div class="col-sm-4 text-center">
-            <a href="#">
+            <a href="{{ route('home') }}">
               <img
                 class="img-fluid main-logo"
                 src="{{ asset('assets/resource') }}/img/logo.png"

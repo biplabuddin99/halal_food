@@ -36,7 +36,7 @@
       <div class="row">
         @forelse ($category as $cat)
         <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3">
-            <a href="#">
+            <a href="{{ route('subcategory.index') }}">
               <img src="{{ asset('./../../albaik/uploads/category') }}/{{ $cat->banner_image }}" alt="" />
               <p>{{ $cat->category_name }}</p></a
             >
