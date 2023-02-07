@@ -108,7 +108,7 @@
                   <ul class="navbar-nav">
                     <li class="nav-item">
                       <a
-                        class="nav-link dropdown-toggle"
+                        class="nav-link dropdown-toggle" href="#"
                         type="button"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
