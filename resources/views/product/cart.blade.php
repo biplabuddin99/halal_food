@@ -11,7 +11,13 @@
         </ol>
       </nav>
       <div class="cart-condition shadow">
-        <p>Add <span>$45.15</span> to cart and get free shipping!</p>
+        {{-- @php
+            $first_number = 5000;
+            $second_number = $total_price;
+            $sum_total = $first_number - $second_number
+            // return $sum_total;
+        @endphp --}}
+        <p>Add <span>${{ $total_price }}</span> to cart and get free shipping!</p>
         <div class="progress mb-3">
           <div
             class="progress-bar bg-danger"
@@ -36,6 +42,7 @@
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Subtotal</th>
+                    <th class="col">Remove</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -51,54 +58,19 @@
                         <td>{{ $cartitem->name }}</td>
                         <td>${{ $cartitem->price }}</td>
                         <td>
-                            <form class="quentity d-flex" action="">
-                                <div>
-                                  <i class="bi bi-dash"></i>
-                                </div>
-                                <input type="text" placeholder="1" value="{{ $cartitem->qty }}" />
-                                <div>
-                                  <i class="bi bi-plus"></i>
-                                </div>
-                            </form>
-                          {{-- <form class="quentity d-flex" action="">
-                            <div class="me-2">
-                              <i class="bi bi-dash minus"></i>
-                            </div>
-                            <div class="num">01</div>
-                            <div class="ms-2">
-                              <i class="bi bi-plus plus"></i>
-                            </div>
-                          </form> --}}
+                            <strong class="ps-2">{{ $cartitem->qty }}</strong>
                         </td>
                         <td>${{ $cartitem->price*$cartitem->qty  }}</td>
+                        <td>
+                            <a href="{{ route('removefrom.cart',['cart_id' => $cartitem->rowId]) }}">
+                                <i class="ms-3 text-danger bi bi-x-circle-fill"></i>
+                            </a>
+                        </td>
                       </tr>
                     @empty
 
                     @endforelse
 
-                  {{-- <tr>
-                    <td>
-                      <img
-                        class="img-fluid"
-                        src="./resource/img/vagitable.jpg"
-                        alt=""
-                      />
-                    </td>
-                    <td>Fresh Organic Broccoli Crowns</td>
-                    <td>$4.85</td>
-                    <td>
-                      <form class="quentity d-flex" action="">
-                        <div>
-                          <i class="bi bi-dash"></i>
-                        </div>
-                        <input type="text" placeholder="1" value="1" />
-                        <div>
-                          <i class="bi bi-plus"></i>
-                        </div>
-                      </form>
-                    </td>
-                    <td>$9.70</td>
-                  </tr> --}}
                 </tbody>
               </table>
             </div>
@@ -115,6 +87,9 @@
                   id="inputGroup-sizing-default"
                   >Apply Cupon</span
                 >
+              </div>
+              <div class="input-group mb-3">
+                <a class="btn btn-danger" href="{{ route('product.index') }}">Continue Shopping</a>
               </div>
             </div>
           </div>

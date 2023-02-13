@@ -188,20 +188,20 @@
         <div class="container product-row-1 my-4">
         <div class="product-heading">
             <div class="row">
-            <div class="col">
-                <p class="h6">
-                <img
-                    class="body-title-icon"
-                    src="resource/img/icon/image 49.png"
-                    alt=""
-                /><strong>Related Products</strong>
-                </p>
-            </div>
-            <div class="col d-flex justify-content-end">
-                <p class="view">
-                <a href="#">View All</a>
-                </p>
-            </div>
+                <div class="col">
+                    <p class="h6">
+                    <img
+                        class="body-title-icon"
+                        src="resource/img/icon/image 49.png"
+                        alt=""
+                    /><strong>Related Products</strong>
+                    </p>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <p class="view">
+                    <a href="{{ route('product.index') }}">View All</a>
+                    </p>
+                </div>
             </div>
         </div>
 

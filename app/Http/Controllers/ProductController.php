@@ -24,6 +24,13 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function productList($childcategory_id)
+    {
+        $product = DB::table('db_items')->where('childcategory_id', $childcategory_id)->select('id','item_name','price','item_image','is_feature')->paginate(12);
+        // return $product;
+        return view('product.product',compact('product'));
+    }
+
     public function singleProduct($id)
     {
         $show_product = DB::table('db_items')->where('id',$id)->first();

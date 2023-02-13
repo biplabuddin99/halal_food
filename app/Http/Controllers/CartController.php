@@ -39,9 +39,9 @@ class CartController extends Controller
     /*======= removeFromCart =======*/
     public function removeFromCart($cart_id)
     {
-        // Cart::remove($cart_id);
+        Cart::remove($cart_id);
         // Toastr::info('Product Removed from Cart!!');
-        // return back();
+        return back();
     }
 
 }

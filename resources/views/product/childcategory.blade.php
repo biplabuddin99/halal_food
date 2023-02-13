@@ -5,15 +5,17 @@
     <!-- offer banner start -->
     <div class="cg-offer-banner container p-3">
       <div class="row">
-        @forelse ($subcategorys as $subcat)
+        @forelse ($child_advertise as $childcat)
         <div class="col">
             <a href="#">
-              <img src="{{ asset('./../../albaik/uploads/subcategory') }}/{{ $subcat->advertise_image }}" alt="" />
+              <img src="{{ asset('./../../albaik/uploads/childcategory') }}/{{ $childcat->advertise_image }}" alt="" />
             </a>
           </div>
         @empty
         <div class="col">
-            <h3 class="text-center"> No Advertise</h3>
+            <a href="#">
+              <img src="{{ asset('assets/resource') }}/img/cg-1 (1).png" alt="" />
+            </a>
           </div>
         @endforelse
       </div>
@@ -26,23 +28,23 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item fw-bold"><a href="#">Home</a></li>
           <li class="breadcrumb-item fw-bold"><a href="#">Library</a></li>
-          {{-- <li class="breadcrumb-item active fw-bold" aria-current="page">
+          <li class="breadcrumb-item active fw-bold" aria-current="page">
             Data
-          </li> --}}
+          </li>
         </ol>
       </nav>
       <!-- Breadcrumb ends -->
       <!-- sub catagory -->
       <div class="row">
-        @forelse ($show_subcategory as $subcat)
+        @forelse ($show_childcategory as $childcat)
         <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3">
-            <a href="{{ route('child-category.list',['subcategory_id' =>$subcat->id]) }}">
-              <img src="{{ asset('./../../albaik/uploads/subcategory') }}/{{ $subcat->banner_image }}" width="150" height="150" alt="" />
-              <p class="pe-5">{{ $subcat->subcategory_name }}</p></a
+            <a href="{{ route('product.list',['childcategory_id' =>$childcat->id]) }}">
+              <img src="{{ asset('./../../albaik/uploads/childcategory') }}/{{ $childcat->banner_image }}" width="150" height="150" alt="" />
+              <p class="pe-5">{{ $childcat->childcategory_name }}</p></a
             >
           </div>
         @empty
-        <h3 class="text-center">No Sub-Category Found</h3>
+        <h3>No Child-Category Found</h3>
         @endforelse
       </div>
     </div>

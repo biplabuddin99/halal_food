@@ -19,14 +19,6 @@ class CategoryController extends Controller
         $advertise_img = DB::table('db_category')->orderBy('id', 'desc')->where('is_advertise', '1')->select('is_advertise','advertise_image')->limit(6)->get();
         return view('product.category',compact('category','advertise_img'));
     }
-    // public function sideCategory()
-    // {
-    //     $sidecategory = DB::table('db_subcategory')
-    //         ->join('db_category', 'db_category.id', '=', 'db_subcategory.category_id')
-    //         ->select('db_subcategory.subcategory_name as subcat_name','db_subcategory.image as subcat_icon', 'db_category.category_name as catnaem','db_category.image as caticon')->get();
-    //         return $sidecategory;
-    //         return view('layout.sidebar', compact('sidecategory'));
-    // }
 
     /**
      * Show the form for creating a new resource.

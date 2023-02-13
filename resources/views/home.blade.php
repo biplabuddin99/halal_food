@@ -54,36 +54,6 @@
               @empty
                   <p>no data</p>
               @endforelse
-              {{-- <div class="carousel-item rounded">
-                <a href="#"
-                  ><img
-                    src="{{ asset('assets/resource') }}/img/slide2.jpg"
-                    class="d-block w-100"
-                    alt="..."
-                /></a>
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>
-                    Some representative placeholder content for the second
-                    slide.
-                  </p>
-                </div>
-              </div>
-              <div class="carousel-item rounded">
-                <a href="#"
-                  ><img
-                    src="{{ asset('assets/resource') }}/img/slide3.jpg"
-                    class="d-block w-100"
-                    alt="..."
-                /></a>
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>
-                    Some representative placeholder content for the third
-                    slide.
-                  </p>
-                </div>
-              </div> --}}
             </div>
             <button
               class="carousel-control-prev"
@@ -127,7 +97,7 @@
               </div>
               <div class="col d-flex justify-content-end">
                 <p class="view">
-                  <a href="#">View All</a>
+                  <a href="{{ route('product.index') }}">View All</a>
                 </p>
               </div>
             </div>
@@ -156,86 +126,7 @@
                 @empty
                     <p>no Product</p>
                 @endforelse
-              {{-- <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                <div class="card shadow mb-3">
-                  <img
-                    class="card-img-top"
-                    src="{{ asset('assets/resource') }}/img/image 7.png"
-                    alt=""
-                  />
-                  <div class="card-body">
-                    <p class="card-title text-center">Beef Bone In ± 50 gm</p>
-                    <div class="card-button">
-                      <a href="#">+ Add to Card</a>
-                      <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                <div class="card shadow mb-3">
-                  <img
-                    class="card-img-top"
-                    src="{{ asset('assets/resource') }}/img/image 7.png"
-                    alt=""
-                  />
-                  <div class="card-body">
-                    <p class="card-title text-center">Beef Bone In ± 50 gm</p>
-                    <div class="card-button">
-                      <a href="#">+ Add to Card</a>
-                      <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                <div class="card shadow mb-3">
-                  <img
-                    class="card-img-top"
-                    src="{{ asset('assets/resource') }}/img/image 7.png"
-                    alt=""
-                  />
-                  <div class="card-body">
-                    <p class="card-title text-center">Beef Bone In ± 50 gm</p>
-                    <div class="card-button">
-                      <a href="#">+ Add to Card</a>
-                      <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                <div class="card shadow mb-3">
-                  <img
-                    class="card-img-top"
-                    src="{{ asset('assets/resource') }}/img/image 7.png"
-                    alt=""
-                  />
-                  <div class="card-body">
-                    <p class="card-title text-center">Beef Bone In ± 50 gm</p>
-                    <div class="card-button">
-                      <a href="#">+ Add to Card</a>
-                      <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                <div class="card shadow mb-3">
-                  <img
-                    class="card-img-top"
-                    src="{{ asset('assets/resource') }}/img/image 7.png"
-                    alt=""
-                  />
-                  <div class="card-body">
-                    <p class="card-title text-center">Beef Bone In ± 50 gm</p>
-                    <div class="card-button">
-                      <a href="#">+ Add to Card</a>
-                      <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div> --}}
+
             </div>
           </div>
         </div>
@@ -298,86 +189,6 @@
                         </div>
                   </div>
                 @endforelse
-              {{-- <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                <div class="card shadow mb-3">
-                  <img
-                    class="card-img-top"
-                    src="{{ asset('assets/resource') }}/img/image 7.png"
-                    alt=""
-                  />
-                  <div class="card-body">
-                    <p class="card-title text-center">Beef Bone In ± 50 gm</p>
-                    <div class="card-button">
-                      <a href="#">+ Add to Card</a>
-                      <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                <div class="card shadow mb-3">
-                  <img
-                    class="card-img-top"
-                    src="{{ asset('assets/resource') }}/img/image 7.png"
-                    alt=""
-                  />
-                  <div class="card-body">
-                    <p class="card-title text-center">Beef Bone In ± 50 gm</p>
-                    <div class="card-button">
-                      <a href="#">+ Add to Card</a>
-                      <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                <div class="card shadow mb-3">
-                  <img
-                    class="card-img-top"
-                    src="{{ asset('assets/resource') }}/img/image 7.png"
-                    alt=""
-                  />
-                  <div class="card-body">
-                    <p class="card-title text-center">Beef Bone In ± 50 gm</p>
-                    <div class="card-button">
-                      <a href="#">+ Add to Card</a>
-                      <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                <div class="card shadow mb-3">
-                  <img
-                    class="card-img-top"
-                    src="{{ asset('assets/resource') }}/img/image 7.png"
-                    alt=""
-                  />
-                  <div class="card-body">
-                    <p class="card-title text-center">Beef Bone In ± 50 gm</p>
-                    <div class="card-button">
-                      <a href="#">+ Add to Card</a>
-                      <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                <div class="card shadow mb-3">
-                  <img
-                    class="card-img-top"
-                    src="{{ asset('assets/resource') }}/img/image 7.png"
-                    alt=""
-                  />
-                  <div class="card-body">
-                    <p class="card-title text-center">Beef Bone In ± 50 gm</p>
-                    <div class="card-button">
-                      <a href="#">+ Add to Card</a>
-                      <a href="#"><i class="bi bi-heart-fill"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div> --}}
             </div>
           </div>
         </div>
@@ -393,14 +204,14 @@
                 <div class="col-sm-6 col-lg-4 col-xl-3 mb-3">
                 <div class="d-flex catagory-card shadow">
                     <div class="row">
-                    <div class="col-3">
+                    <div class="col-5">
                         <img
                         class="img-fluid"
                         src="{{ asset('./../../albaik/uploads/category') }}/{{ $cat->image }}"
                         alt=""
                         />
                     </div>
-                    <div class="col-9">
+                    <div class="col-7">
                         <p>{{ $cat->category_name }}</p>
                     </div>
                     </div>

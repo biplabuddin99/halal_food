@@ -133,7 +133,7 @@
                 />
                 <label class="form-check-label" for="exampleCheck1"
                     >Check me out</label
-                >
+                > <a class="ms-2" href="{{ route('login') }}"><span>or Login</span></a>
                 </div>
                 <button type="submit" class="submit shadow">Submit</button>
                 {{-- <a class="submit shadow" href="#">Submit</a> --}}

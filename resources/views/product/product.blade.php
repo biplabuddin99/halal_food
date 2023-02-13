@@ -30,7 +30,7 @@
                         <div class="card shadow mb-3">
                           <a href="#">
                             <a href="{{ route('product_details.singleProduct',$p->id) }}">
-                          <img class="card-img-top" src="{{ asset('./../../albaik/') }}/{{ $p->item_image }}"/>
+                          <img class="card-img-top" src="{{ asset('./../../albaik/') }}/{{ $p->item_image }}" width="200px" height="200px"/>
                           </a>
                           <div class="card-body">
                             <p class="card-title text-center">{{ $p->item_name }}</p>

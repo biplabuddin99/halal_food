@@ -6,6 +6,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SubcategoryController;
+use App\Http\Controllers\ChildCategoryController;
 use App\Models\CustomerAuth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,17 +23,19 @@ use App\Http\Middleware\isCustomer;
 |
 */
 
-Route::resource('/',FrontendController::class);
+Route::get('/',[FrontendController::class,'index']);
 Route::get('/home',[FrontendController::class,'index'])->name('home');
-Route::resource('category',CategoryController::class);
-Route::get('side-category',[CategoryController::class,'sideCategory'])->name('side.category');
-Route::resource('subcategory',SubcategoryController::class);
+Route::get('/category-all',[CategoryController::class,'index'])->name('category.index');
+// Route::get('/subcategory-all',[SubcategoryController::class,'index'])->name('subcategory.index');
 Route::get('/subcategory-list/{category_id}',[SubcategoryController::class,'subCategory'])->name('subcategory.list');
-Route::resource('product',ProductController::class);
+Route::get('/child-category-all',[ChildCategoryController::class,'index'])->name('child-category.index');
+Route::get('/child-category-list/{subcategory_id}',[ChildCategoryController::class,'childCategory'])->name('child-category.list');
+Route::get('product-all',[ProductController::class,'index'])->name('product.index');
+Route::get('/product-list/{childcategory_id}', [ProductController::class,'productList'])->name('product.list');
 Route::get('/product_details/{id}', [ProductController::class,'singleProduct'])->name('product_details.singleProduct');
-Route::get('/shopping-cart',[CartController::class,'cartPage'])->name('cart.page');
-Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add-to.cart');
-// Route::resource('cart',CartController::class);
+
+
+Route::get('/remove-from-cart/{cart_id}', [CartController::class, 'removeFromCart'])->name('removefrom.cart');
 
 
 Route::get('/customer',[CustomerAuthController::class,'SingUpForm'])->name('register');
@@ -44,6 +47,8 @@ Route::get('/logout',[CustomerAuthController::class,'singOut'])->name('logOut');
 Route::group(['middleware'=>isCustomer::class],function(){
     Route::prefix('customer')->group(function(){
         Route::get('dashboard',[FrontendController::class,'index'])->name('customer.dashboard');
+        Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add-to.cart');
+        Route::get('/shopping-cart',[CartController::class,'cartPage'])->name('cart.page');
     });
 });
 
