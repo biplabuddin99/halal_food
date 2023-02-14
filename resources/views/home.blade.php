@@ -111,11 +111,11 @@
                     <div class="card shadow mb-3">
                       <a href="#">
                         <a href="{{ route('product_details.singleProduct',$p->id) }}">
-                      <img class="card-img-top" src="{{ asset('./../../albaik/') }}/{{ $p->item_image }}"/>
+                      <img class="card-img-top" src="{{ asset('./../../albaik/') }}/{{ $p->item_image }}" width="200px" height="200px"/>
                       </a>
                       <div class="card-body">
                         <p class="card-title text-center">{{ $p->item_name }}</p>
-                        <p class="card-title text-center m-0 p-0">{{ $p->price .' '.'TK' }}</p>
+                        <p class="card-title text-center m-0 p-0">{{ $p->sales_price .' '.'TK' }}</p>
                         <div class="card-button">
                           <a href="#">+ Add to Card</a>
                           <a href="#"><i class="bi bi-heart-fill"></i></a>
@@ -159,11 +159,11 @@
                     <div class="card shadow mb-3">
                       <a href="#">
                         <a href="{{ route('product_details.singleProduct',$off->id) }}">
-                      <img class="card-img-top" src="{{ asset('./../../albaik/') }}/{{ $off->item_image }}"/>
+                      <img class="card-img-top" src="{{ asset('./../../albaik/') }}/{{ $off->item_image }}"  width="200px" height="200px"/>
                       </a>
                       <div class="card-body">
                         <p class="card-title text-center">{{ $off->item_name }}</p>
-                        <p class="card-title text-center m-0 p-0">{{ $off->price .' '.'TK' }}</p>
+                        <p class="card-title text-center m-0 p-0">{{ $off->sales_price .' '.'TK' }}</p>
                         <div class="card-button">
                           <a href="#">+ Add to Card</a>
                           <a href="#"><i class="bi bi-heart-fill"></i></a>
@@ -220,119 +220,6 @@
             @empty
               <p>no category</p>
             @endforelse
-
-            {{-- <div class="col-sm-6 col-lg-4 col-xl-3 mb-3">
-              <div class="d-flex catagory-card shadow">
-                <div class="row">
-                  <div class="col-3">
-                    <img
-                      class="img-fluid"
-                      src="{{ asset('assets/resource') }}/img/icon/chili-pepper.png"
-                      alt=""
-                    />
-                  </div>
-                  <div class="col-9">
-                    <p>Chicken & Poultry</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3 mb-3">
-              <div class="d-flex catagory-card shadow">
-                <div class="row">
-                  <div class="col-3">
-                    <img
-                      class="img-fluid"
-                      src="{{ asset('assets/resource') }}/img/icon/chili-pepper.png"
-                      alt=""
-                    />
-                  </div>
-                  <div class="col-9">
-                    <p>Chicken & Poultry</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3 mb-3">
-              <div class="d-flex catagory-card shadow">
-                <div class="row">
-                  <div class="col-3">
-                    <img
-                      class="img-fluid"
-                      src="{{ asset('assets/resource') }}/img/icon/chili-pepper.png"
-                      alt=""
-                    />
-                  </div>
-                  <div class="col-9">
-                    <p>Chicken & Poultry</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3 mb-3">
-              <div class="d-flex catagory-card shadow">
-                <div class="row">
-                  <div class="col-3">
-                    <img
-                      class="img-fluid"
-                      src="{{ asset('assets/resource') }}/img/icon/chili-pepper.png"
-                      alt=""
-                    />
-                  </div>
-                  <div class="col-9">
-                    <p>Chicken & Poultry</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3 mb-3">
-              <div class="d-flex catagory-card shadow">
-                <div class="row">
-                  <div class="col-3">
-                    <img
-                      class="img-fluid"
-                      src="{{ asset('assets/resource') }}/img/icon/chili-pepper.png"
-                      alt=""
-                    />
-                  </div>
-                  <div class="col-9">
-                    <p>Chicken & Poultry</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3 mb-3">
-              <div class="d-flex catagory-card shadow">
-                <div class="row">
-                  <div class="col-3">
-                    <img
-                      class="img-fluid"
-                      src="{{ asset('assets/resource') }}/img/icon/chili-pepper.png"
-                      alt=""
-                    />
-                  </div>
-                  <div class="col-9">
-                    <p>Chicken & Poultry</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3 mb-3">
-              <div class="d-flex catagory-card shadow">
-                <div class="row">
-                  <div class="col-3">
-                    <img
-                      class="img-fluid"
-                      src="{{ asset('assets/resource') }}/img/icon/chili-pepper.png"
-                      alt=""
-                    />
-                  </div>
-                  <div class="col-9">
-                    <p>Chicken & Poultry</p>
-                  </div>
-                </div>
-              </div>
-            </div> --}}
           </div>
         </div>
         <!-- Product Catagory Section end -->
@@ -387,36 +274,6 @@
                     @empty
                         <p>no offer</p>
                     @endforelse
-                    {{-- <div class="carousel-item rounded">
-                    <a href="#"
-                        ><img
-                        src="{{ asset('assets/resource') }}/img/slide2.jpg"
-                        class="d-block w-100"
-                        alt="..."
-                    /></a>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>
-                        Some representative placeholder content for the second
-                        slide.
-                        </p>
-                    </div>
-                    </div>
-                    <div class="carousel-item rounded">
-                    <a href="#"
-                        ><img
-                        src="{{ asset('assets/resource') }}/img/slide3.jpg"
-                        class="d-block w-100"
-                        alt="..."
-                    /></a>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>
-                        Some representative placeholder content for the third
-                        slide.
-                        </p>
-                    </div>
-                    </div> --}}
               </div>
               <button
                 class="carousel-control-prev"

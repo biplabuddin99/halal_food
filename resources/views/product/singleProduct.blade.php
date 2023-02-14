@@ -41,7 +41,7 @@
             </div>
             <div class="col-sm-6 p-specification">
             <div class="p-price d-flex">
-                <p><del>${{ $show_product->price }}</del></p>
+                <p><del>${{ $show_product->sales_price }}</del></p>
                 <p>$ 6.77</p>
             </div>
             <span>In Stock</span>
@@ -77,8 +77,7 @@
                     <i class="bi bi-brightness-high-fill"></i>Type: Organic
                 </li>
                 <li class="nav-item">
-                    <i class="bi bi-brightness-high-fill"></i>MFG: Jun
-                    4.2021
+                    <i class="bi bi-brightness-high-fill"></i>MFG: {{$show_product->created_date}}
                 </li>
                 <li class="nav-item">
                     <i class="bi bi-brightness-high-fill"></i>LIFE: 40 days
@@ -175,9 +174,9 @@
                 <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>11 KG</td>
+                    <td>{{ $show_product->weight }}</td>
                     <td>1 inci</td>
-                    <td>30-12-2024</td>
+                    <td>{{ $show_product->expire_date }}</td>
                 </tr>
                 </tbody>
             </table>
@@ -215,7 +214,7 @@
                         </a>
                     <div class="card-body">
                         <p class="card-title text-center"> {{ $rproduct->item_name }} </p>
-                        <p class="card-title text-center m-0 p-0">{{ $rproduct->price .' '.'TK' }}</p>
+                        <p class="card-title text-center m-0 p-0">{{ $rproduct->sales_price .' '.'TK' }}</p>
                         <div class="card-button">
                         <a href="#">+ Add to Card</a>
                         <a href="#"><i class="bi bi-heart-fill"></i></a>

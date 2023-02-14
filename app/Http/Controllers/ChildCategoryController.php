@@ -16,7 +16,7 @@ class ChildCategoryController extends Controller
     public function childCategory($subcategory_id)
     {
         $show_childcategory = DB::table('db_childcategory')->where('subcategory_id',$subcategory_id)->get();
-        $child_advertise = DB::table('db_childcategory')->orderBy('id', 'desc')->where('is_advertise', '1')->select('is_advertise','advertise_image')->limit(6)->get();
+        $child_advertise = DB::table('db_childcategory')->where('subcategory_id',$subcategory_id)->orderBy('id', 'desc')->where('is_advertise', '1')->select('is_advertise','advertise_image')->limit(6)->get();
         return view('product.childcategory',compact('show_childcategory','child_advertise'));
 
     }

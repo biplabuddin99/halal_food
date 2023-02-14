@@ -11,7 +11,7 @@
                   <!-- Breadcrumb start -->
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                      <li class="breadcrumb-item fw-bold"><a class="navigation-a" href="#">Home</a></li>
+                      <li class="breadcrumb-item fw-bold"><a class="navigation-a" href="{{ route('home') }}">Home</a></li>
                       <li class="breadcrumb-item fw-bold"><a class="navigation-a" href="#">Category</a></li>
                       <li class="breadcrumb-item active fw-bold" aria-current="page">
                         Product
@@ -34,7 +34,7 @@
                           </a>
                           <div class="card-body">
                             <p class="card-title text-center">{{ $p->item_name }}</p>
-                            <p class="card-title text-center m-0 p-0">{{ $p->price .' '.'TK' }}</p>
+                            <p class="card-title text-center m-0 p-0">{{ $p->sales_price .' '.'TK' }}</p>
                             <div class="card-button">
                               <a href="#">+ Add to Card</a>
                               <a href="#"><i class="bi bi-heart-fill"></i></a>
@@ -43,7 +43,7 @@
                         </div>
                       </div>
                     @empty
-                        <p>no Product</p>
+                        <h3 class="text-center m-5">No Product Found</h3>
                     @endforelse
                     {{ $product->links() }}
 

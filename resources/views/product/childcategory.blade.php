@@ -13,9 +13,7 @@
           </div>
         @empty
         <div class="col">
-            <a href="#">
-              <img src="{{ asset('assets/resource') }}/img/cg-1 (1).png" alt="" />
-            </a>
+            <h4 class="text-center mt-5">No Advertise Image</h4>
           </div>
         @endforelse
       </div>
@@ -26,7 +24,7 @@
       <!-- Breadcrumb start -->
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item fw-bold"><a href="#">Home</a></li>
+          <li class="breadcrumb-item fw-bold"><a href="{{ route('home') }}">Home</a></li>
           <li class="breadcrumb-item fw-bold"><a href="#">Library</a></li>
           <li class="breadcrumb-item active fw-bold" aria-current="page">
             Data
@@ -44,7 +42,7 @@
             >
           </div>
         @empty
-        <h3>No Child-Category Found</h3>
+        <h3 class="text-center mt-5">No Child-Category Found</h3>
         @endforelse
       </div>
     </div>

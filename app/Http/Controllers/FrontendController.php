@@ -21,8 +21,8 @@ class FrontendController extends Controller
         $faq=Faq::all();
         $slide=HeaderSlider::all();
         $offer=OurOffer::all();
-        $product = DB::table('db_items')->where('is_feature', '1')->select('id','item_name','price','item_image','is_feature')->get();
-        $offer_product = DB::table('db_items')->where('is_top', '1')->select('id','item_name','price','item_image','is_top')->get();
+        $product = DB::table('db_items')->where('is_feature', '1')->select('id','item_name','sales_price','item_image','is_feature')->get();
+        $offer_product = DB::table('db_items')->where('is_top', '1')->select('id','item_name','sales_price','item_image','is_top')->get();
         return view('home',compact('faq','slide','offer','product','offer_product'));
     }
 
